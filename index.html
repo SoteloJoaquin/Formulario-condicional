@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Condicional</title>
+    <script>
+        function mostrarPreguntas() {
+            const respuesta = document.querySelector('input[name="respuesta"]:checked').value;
+            document.getElementById('preguntasSi').style.display = respuesta === 'si' ? 'block' : 'none';
+            document.getElementById('preguntasNo').style.display = respuesta === 'no' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+<h2>¿Te gustaría continuar?</h2>
+<label>
+    <input type="radio" name="respuesta" value="si" onclick="mostrarPreguntas()"> Sí
+</label>
+<label>
+    <input type="radio" name="respuesta" value="no" onclick="mostrarPreguntas()"> No
+</label>
+
+<div id="preguntasSi" style="display:none;">
+    <h3>Preguntas para 'Sí'</h3>
+    <p>Pregunta 1: ¿Por qué?</p>
+    <input type="text">
+</div>
+
+<div id="preguntasNo" style="display:none;">
+    <h3>Preguntas para 'No'</h3>
+    <p>Pregunta 2: ¿Cuál es la razón?</p>
+    <input type="text">
+</div>
+
+</body>
+</html>
